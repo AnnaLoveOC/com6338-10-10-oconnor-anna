@@ -27,6 +27,34 @@ class Word {
 
   // implement the guessLetter function:
   // guessLetter(letter) {}
+  guessLetter(letter) {
+
+    if (this.correctLetters.includes(letter) || this.incorrectLetters.includes(letter)) {
+      return
+    }
+
+    if (this.word.includes(letter)) {
+      this.correctLetters.push(letter)
+
+      let letters = this.displayWord.split("") 
+
+      for (let i = 0; i < this.word.length; i++) {
+        if (this.word[i] === letter) {
+          letters[i] = letter
+
+        }
+        
+      }
+
+      this.displayWord = letters.join("")
+
+    } else {
+      this.incorrectLetters.push(letter)
+      this.remainingGuesses--
+    }
+
+  }
+
 
   // implement the updateScreen function:
   // updateScreen() {}
