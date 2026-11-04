@@ -25,6 +25,7 @@ class Word {
     this.correctLetters = []
   }
 
+  
   // implement the guessLetter function:
   // guessLetter(letter) {}
   guessLetter(letter) {
@@ -67,9 +68,26 @@ class Word {
 
   // implement the isGameOver function:
   // isGameOver() {}
+  isGameOver() {
+    if (this.displayWord !== this.word && this.remainingGuesses > 0) {
+      return false
+    } else {
+      return true
+    }
+  }
+
 
   // implement the getWinOrLoss function:
   // getWinOrLoss() {}
+  getWinOrLoss() {
+    if (this.displayWord === this.word && this.remainingGuesses > 0) {
+      return "win"
+    } else if (this.remainingGuesses <= 0) {
+      return "loss"
+    } else {
+      return null
+    }
+  }
 }
 
 function newGame() {
