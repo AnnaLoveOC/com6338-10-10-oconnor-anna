@@ -58,6 +58,12 @@ class Word {
 
   // implement the updateScreen function:
   // updateScreen() {}
+  updateScreen() {
+    document.querySelector("#word-to-guess").textContent = this.displayWord
+    document.querySelector("#remaining-guesses").textContent = this.remainingGuesses
+    document.querySelector("#incorrect-letters").textContent = this.incorrectLetters
+  }
+
 
   // implement the isGameOver function:
   // isGameOver() {}
